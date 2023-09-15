@@ -121,7 +121,7 @@ function getPolyfillHelper() {
   // See if project has custom polyfills, if so, include the PATH to them
   try {
     const customPolyfills = require.resolve('./polyfills.js');
-    getPolyfills = (function(originalGetPolyfills) {
+    getPolyfills = (function (originalGetPolyfills) {
       return () => originalGetPolyfills().concat(customPolyfills);
     })(getPolyfills);
   } catch (e) {
@@ -133,7 +133,7 @@ function getPolyfillHelper() {
 
 const PATH = require('path');
 const FS = require('fs'),
-  blacklist = require('metro-config/src/defaults/blacklist');
+  blacklist = require('metro-config/src/defaults/exclusionList');
 
 const repoDir = PATH.dirname(PATH.dirname(__dirname));
 const moduleBlacklist = [

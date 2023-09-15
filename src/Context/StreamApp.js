@@ -59,7 +59,7 @@ export class StreamApp extends React.Component {
       this.props.appId,
       this.props.options || {},
     );
-
+    
     let analyticsClient;
 
     this.state = {
